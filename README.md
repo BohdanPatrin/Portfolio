@@ -60,8 +60,8 @@ Of course, if there are no commands in the header, there should still be one byt
 My variant:<br/>
 Guess the 4-digit number game: The user on the client guesses a 4-digit integer that is stored on the server. 4 digits are sent from the client, to which the server responds with the number of correct digits. The client can give up and then the server reveals the guessed number. The user on the client can choose the method of setting attempts: entering them in a dialog or automatically generating random 4-digit numbers in a given amount.<br/>
 ***Results of execution***<br/>
-Сlient program: ![image](https://github.com/BohdanPatrin/Portfolio/assets/127937644/7596341f-32be-4f12-aab8-02dd72e26fc9)<br/>
-Server program: ![image](https://github.com/BohdanPatrin/Portfolio/assets/127937644/b386b52d-72b6-4cc7-a618-0abad3ca835b)<br/>
+Сlient program:<br/> ![image](https://github.com/BohdanPatrin/Portfolio/assets/127937644/7596341f-32be-4f12-aab8-02dd72e26fc9)<br/>
+Server program:<br/> ![image](https://github.com/BohdanPatrin/Portfolio/assets/127937644/b386b52d-72b6-4cc7-a618-0abad3ca835b)<br/>
 First, I launched the server, then the client. After the connection, I entered the command "start game" and chose the method of setting the number by generation. The number 6589 was generated. Since the number 6569 was given, the number of correct numbers was 3, which the program displayed. After that, I chose to enter the number, entered 6569, and the program displayed a message that I had guessed the number.  Then I entered the who command on the server and the IP address of the client was displayed (since both programs are running on the same device, the address is 127.0.01). After that, I entered the command end session on the client and the program stopped working.<br/>
-Logging: ![image](https://github.com/BohdanPatrin/Portfolio/assets/127937644/9f72ed55-d354-42b9-a278-bb406c6f5287) <br/>
+Logging:<br/> ![image](https://github.com/BohdanPatrin/Portfolio/assets/127937644/9f72ed55-d354-42b9-a278-bb406c6f5287) <br/>
 So, the program runs as intended.<br/>
