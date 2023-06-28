@@ -42,5 +42,26 @@ It is necessary to take into account:<br/>
 ![image](https://github.com/BohdanPatrin/Portfolio/assets/127937644/e9d44948-ad26-47a1-b9d6-20e602045885)<br/>
 ![image](https://github.com/BohdanPatrin/Portfolio/assets/127937644/63b7632b-60d1-470e-8fe5-292ae618ec7d)<br/>
 First, I entered the value 10005 in the first register, then 17 in the second register.
-Then I entered the summa command and, as we can see, it was executed, and the result was was written to the first register. After that, I wanted to put a value in the third register, which is too large for the int type, and I got an error. When the execution of commands, you can see changes in the values of the status register, the counter and clock counters, so the program is executing correctly.
-
+Then I entered the summa command and, as we can see, it was executed, and the result was was written to the first register. After that, I wanted to put a value in the third register, which is too large for the int type, and I got an error. When the execution of commands, you can see changes in the values of the status register, the counter and clock counters, so the program is executing correctly.<br/>
+•***Interaction of distributed processes through the socket mechanism***<br/>
+**Task statement**<br/>
+1) Develop a data exchange protocol for your variant: a data exchange script and its commands (a message is transmitted via a socket, and what to do with it is determined by the commands).<br/>
+2) Develop two programs, the so-called client program (hereinafter referred to as the client) and the server program (hereinafter referred to as the server). These two programs, running on different workstations (nodes) of the network, should exchange commands according to the protocol developed by the author, using the socket mechanism in the TCP/IP profile.<br/>
+3) A response to erroneous commands must be provided.<br/>
+4) The destination port number should be selected as follows: #_port = 1025 + #_variant.<br/>
+5) All variants must support a command named Who, in response to which the server provides information about the author and the number and short name of the variant.<br/>
+6) The client and the server must make a record in the system log (text file) for each sent/received socket message about: time of validity, message command(s).<br/>
+7) The format of socket messages is as follows: <br/>  
+ Header: Data<br/>
+Header format and field sizes:<br/>
+ Header length - 1 byte<br/>
+Commands - up to 255 bytes<br/>
+Of course, if there are no commands in the header, there should still be one byte of header length (and equal to 1). As a rule, a message will contain one command (optional elements in [...]). The command may have operands, in which case the syntax of such commands is up to you.<br/>
+My variant:<br/>
+Guess the 4-digit number game: The user on the client guesses a 4-digit integer that is stored on the server. 4 digits are sent from the client, to which the server responds with the number of correct digits. The client can give up and then the server reveals the guessed number. The user on the client can choose the method of setting attempts: entering them in a dialog or automatically generating random 4-digit numbers in a given amount.<br/>
+***Results of execution***<br/>
+Сlient program: ![image](https://github.com/BohdanPatrin/Portfolio/assets/127937644/7596341f-32be-4f12-aab8-02dd72e26fc9)<br/>
+Server program: ![image](https://github.com/BohdanPatrin/Portfolio/assets/127937644/b386b52d-72b6-4cc7-a618-0abad3ca835b)<br/>
+First, I launched the server, then the client. After the connection, I entered the command "start game" and chose the method of setting the number by generation. The number 6589 was generated. Since the number 6569 was given, the number of correct numbers was 3, which the program displayed. After that, I chose to enter the number, entered 6569, and the program displayed a message that I had guessed the number.  Then I entered the who command on the server and the IP address of the client was displayed (since both programs are running on the same device, the address is 127.0.01). After that, I entered the command end session on the client and the program stopped working.<br/>
+Logging: ![image](https://github.com/BohdanPatrin/Portfolio/assets/127937644/9f72ed55-d354-42b9-a278-bb406c6f5287) <br/>
+So, the program runs as intended.<br/>
