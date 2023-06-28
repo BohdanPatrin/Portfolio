@@ -14,3 +14,33 @@ The results should be presented in a tabular form, showing for each test:<br/>
 ***Results of execution***<br/>
 ![image](https://github.com/BohdanPatrin/Portfolio/assets/127937644/4b75de3b-4eec-4029-86ba-542fb0175b77)
 As you can see, the fastest operation is subtraction for int, not the expected addition. This may be due to the use of optimization algorithms for multiplication.
+•***Simulation model of the CPU***
+**Task statement**<br/>
+It is necessary to develop a software model of the processor and implement its simulation (i.e., computer) model.The Contractor will be offered an individual variant, which will determine the specific:<br/>
+1) addressability of the processor (1-, 2- or 3-address, or the number of operands);<br/>
+2) processor bit rate (data highway);<br/>
+3) mandatory processor instruction to be implemented;<br/>
+Must be implemented:<br/>
+1) placement of the interpreted program in a text file (for example, one line = one command);<br/>
+2) at least 2 commands (one of them is to write a value to a register/stack/OP, others are specified by a variant);<br/>
+3) bitwise representation for operands/registers, possibly for some variants with byte grouping variants with byte grouping of bits.<br/>
+RAM shall be represented in 16-bit format;<br/>
+4) fixation in the status register of at least the sign of the command execution result;<br/>
+5) clockwise execution of commands (for example, the 1st clock is the entry of the command into the command register, 2nd cycle - interpretation of operands, 3rd cycle - execution of the operation and recording the result).<br/>
+*My variant:*<br/>
+Addressability of the processor: 2-address<br/>
+Bit depth of registers: 26-bit<br/>
+Processor commands:<br/>
+Each byte of the 1st operand of the command is treated as a digit from 0 to 9 (unsigned). The command returns the sum of these byte-digits taken modulo the number specified by the 2nd operand, represented in:<br/>
+- the command directly or a register for stackless implementation;<br/>
+- the top of the stack in a stacked implementation of the operand placement.<br/>
+It is necessary to take into account:<br/>
+- register/stack bits should be displayed with byte-by-byte breakdown;<br/>
+- in variants with an incomplete byte (18-, 20-, 22-bit operands), such a byte is supplemented with leading zeros;<br/>
+- provide a command format with a number in the operand in literal form (with digits 0...9 for the corresponding bytes)<br/>
+***Results of execution***<br/>
+![image](https://github.com/BohdanPatrin/Portfolio/assets/127937644/e9d44948-ad26-47a1-b9d6-20e602045885)<br/>
+![image](https://github.com/BohdanPatrin/Portfolio/assets/127937644/63b7632b-60d1-470e-8fe5-292ae618ec7d)<br/>
+First, I entered the value 10005 in the first register, then 17 in the second register.
+Then I entered the summa command and, as we can see, it was executed, and the result was was written to the first register. After that, I wanted to put a value in the third register, which is too large for the int type, and I got an error. When the execution of commands, you can see changes in the values of the status register, the counter and clock counters, so the program is executing correctly.
+
