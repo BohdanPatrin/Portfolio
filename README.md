@@ -13,8 +13,8 @@ The results should be presented in a tabular form, showing for each test:<br/>
 5. percentage value (can be rounded to the nearest whole number).<br/>
 ***Results of execution***<br/>
 ![image](https://github.com/BohdanPatrin/Portfolio/assets/127937644/4b75de3b-4eec-4029-86ba-542fb0175b77)
-As you can see, the fastest operation is subtraction for int, not the expected addition. This may be due to the use of optimization algorithms for multiplication.
-•***Simulation model of the CPU***
+As you can see, the fastest operation is subtraction for int, not the expected addition. This may be due to the use of optimization algorithms for multiplication.<br/>
+•***Simulation model of the CPU***<br/>
 **Task statement**<br/>
 It is necessary to develop a software model of the processor and implement its simulation (i.e., computer) model.The Contractor will be offered an individual variant, which will determine the specific:<br/>
 1) addressability of the processor (1-, 2- or 3-address, or the number of operands);<br/>
